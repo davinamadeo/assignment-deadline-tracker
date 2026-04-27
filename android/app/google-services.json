@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "22925091897",
+    "project_id": "assignment-deadline-trac-7db81",
+    "storage_bucket": "assignment-deadline-trac-7db81.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22925091897:android:36082fbf62156939af59e8",
+        "android_client_info": {
+          "package_name": "com.example.assignment_deadline_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZy3yc7LtfMT1FyoUOGfFPULQO_xn2hls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
