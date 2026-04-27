@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _markDone(Assignment a) async {
     await _db.markDone(a.id!);
-    await NotificationService.instance.cancelNotification(a.id.hashCode);
+    await NotificationService.instance.cancelNotification(NotificationService.idFromDocId(a.id!));
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _deleteAssignment(Assignment a) async {
     await _db.deleteAssignment(a.id!);
-    await NotificationService.instance.cancelNotification(a.id.hashCode);
+    await NotificationService.instance.cancelNotification(NotificationService.idFromDocId(a.id!));
   }
 
   Future<void> _openAddAssignment() async {

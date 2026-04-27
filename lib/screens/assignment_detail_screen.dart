@@ -219,7 +219,7 @@ class AssignmentDetailScreen extends StatelessWidget {
   Future<void> _markDone(BuildContext context) async {
     await FirestoreService.instance.markDone(assignment.id!);
     await NotificationService.instance
-        .cancelNotification(assignment.id.hashCode);
+        .cancelNotification(NotificationService.idFromDocId(assignment.id!));
     if (context.mounted) Navigator.pop(context);
   }
 
@@ -253,7 +253,7 @@ class AssignmentDetailScreen extends StatelessWidget {
     if (confirm == true) {
       await FirestoreService.instance.deleteAssignment(assignment.id!);
       await NotificationService.instance
-          .cancelNotification(assignment.id.hashCode);
+          .cancelNotification(NotificationService.idFromDocId(assignment.id!));
       if (context.mounted) Navigator.pop(context);
     }
   }

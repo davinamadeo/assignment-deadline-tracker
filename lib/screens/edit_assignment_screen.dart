@@ -94,10 +94,10 @@ class _EditAssignmentScreenState extends State<EditAssignmentScreen> {
     await FirestoreService.instance.updateAssignment(updated);
 
     // Reschedule notification with new deadline
-    await NotificationService.instance
-        .cancelNotification(widget.assignment.id.hashCode);
+    final notifId = NotificationService.idFromDocId(widget.assignment.id!);
+    await NotificationService.instance.cancelNotification(notifId);
     await NotificationService.instance.scheduleDeadlineReminder(
-      id: widget.assignment.id.hashCode,
+      id: notifId,
       assignmentTitle: updated.title,
       courseName: widget.course.name,
       deadline: updated.deadline,

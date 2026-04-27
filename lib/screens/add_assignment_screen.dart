@@ -99,10 +99,11 @@ class _AddAssignmentScreenState extends State<AddAssignmentScreen> {
     await FirestoreService.instance.insertAssignment(assignment);
 
     await NotificationService.instance.scheduleDeadlineReminder(
-      id: docId.hashCode,
+      id: NotificationService.idFromDocId(docId),
       assignmentTitle: assignment.title,
       courseName: _selectedCourse!.name,
       deadline: assignment.deadline,
+      minutesBefore: 1,
     );
 
     if (mounted) Navigator.pop(context);
